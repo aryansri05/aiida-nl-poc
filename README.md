@@ -79,21 +79,22 @@ Suggested fixes:
 # 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Set up AiiDA profile (if not already done)
+# setup
+
 verdi quicksetup
 
-# 3. Install and start Ollama
+# Install and start Ollama
 # https://ollama.ai
 ollama pull llama3
 ollama serve
 
-# 4. Index error patterns into ChromaDB
+# Index error patterns into ChromaDB
 python agents/search.py
 
-# 5. Start the MCP server
+# Start the MCP server
 python mcp_server/server.py
 
-# 6. Run the natural language interface
+#  Run the natural language interface
 python llm/ollama_agent.py
 ```
 
@@ -102,7 +103,7 @@ python llm/ollama_agent.py
 ## Example Interactions
 
 ```
-You: Why did my last calculation fail?
+Researcher : Why did my last calculation fail?
 
 [Calling tool: diagnose_calculation({'pk': 1234})]
 
@@ -112,7 +113,7 @@ reducing conv_thr from 1e-8 to 1e-6.
 ```
 
 ```
-You: How do I launch a PwCalculation?
+Researcher: How do I launch a PwCalculation?
 
 [Calling tool: search_docs({'query': 'how to launch PwCalculation'})]
 
@@ -139,3 +140,4 @@ This PoC is intentionally minimal. The full project will add:
 **Aryan Srivastava** — [github.com/aryansri05](https://github.com/aryansri05)
 
 GSoC 2026 applicant — AiiDA Natural Language Interface (NumFOCUS)
+AI tools were used to assist with grammar and wording and Example . All technical content, architectural decisions, and code are my own
